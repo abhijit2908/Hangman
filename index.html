@@ -4,11 +4,23 @@
 	<meta charset="UTF-8">
 	<script src="assets/javascript/game.js"></script>
 	<title>Hangman</title>
+	<style type="text/css">
+      canvas { border: 1px solid black;
+      			padding:15px; }
+    </style>
 </head>
-<body>
-<div>
+<body onload="animate();">
+<div id="game">
+<h1>Hangman Game</h1>
+<p>Guess The Word</p>
+<p>Wins:</p>
+<p>Losses:</p>
+<p>Word:</p>
+<p>Guesses left:</p>
+<p>Guesss so far:</p>
 
 </div>
+<canvas id="tutorial" width="350" height="350" color="grey"> This is canvas</canvas>
 
 </body>
 </html>
