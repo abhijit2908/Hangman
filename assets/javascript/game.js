@@ -254,7 +254,7 @@ if((maskWord !== computerGuess) && (guessesLeft !== 0)){
 			if(computerGuess.substr(i,1)==usrinput){
 				//console.log(computerGuess.substr(i,1));
 				maskWord=maskWord.substr(0,i)+usrinput+maskWord.substr(i+1,(maskWord.length)-i-1);
-				//console.log(maskWord);
+				console.log(maskWord);
 					
 
 		}
@@ -266,31 +266,32 @@ else{
 
 		guessesLeft--;
 		letterGuessed.push(usrinput);
-
 		animate(guessesLeft);
 	}
 		console.log(guessesLeft);
 		console.log(letterGuessed);
-		if(guessesLeft === 0){
-      rightLeg();
+		
+}
+}
+if(guessesLeft === 0){
+
     Losses++;
 
-      alert("Game Over.Press Ok To Guess the next word.");
+      alert("Game Over.The Word Was " +computerGuess+ ". Press Ok To Guess the next word.");
       
-							console.log("Losses:"+Losses);
+              console.log("Losses:"+Losses);
               reset();
-				
-				//animate(guessesLeft);
+        
+        //animate(guessesLeft);
 
-			}
-}
-}
+      }
 
  if(maskWord===computerGuess){
+  document.getElementById
 	//console.log(maskWord);
 	wins++;
 	//console.log("Wins:"+wins);
-  //alert("You Guessed the Word.The word is "+computerGuess);
+  alert("You Guessed the Word.The word is "+computerGuess);
   reset();
 }
 	
