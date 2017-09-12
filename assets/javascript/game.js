@@ -1,6 +1,8 @@
 var usrinput;
 var wins=0;
-var words=['Cat','Dog','Horse','Camel','Elephant','Cow','Giraffe','Tiger','Lion'];
+var winnersound= new Audio('./assets/images/applause2.mp3');
+var losersound= new Audio('./assets/images/losssound.mp3');
+var words=['Elk','Leopard','Panther','RattleSnake','Koala','Bear','Elephant','Zebra','Giraffe','Tiger','Lion','Alligator','cougar','Turtle','Monkey','Rhinoceros','Panda','Cheetah','Seal','Ostrich'];
 var Losses=0;
 var guessesLeft=10;
 var letterGuessed= [];
@@ -227,13 +229,23 @@ console.log(letterGuessed);
   };
 
   reset= function(){
-    guessesLeft=10;
+        guessesLeft=10;
         letterGuessed=[];
         computerGuess= words[Math.floor(Math.random() * words.length)].toLowerCase();
         console.log(computerGuess);
         maskWord=computerGuess.replace(/./g,'-');
         console.log(maskWord);
         redraw();
+        html=
+"<h1>The Zoo Hangman Game</h1>"+
+"<p>Guess The Zoo Animal</p>"+
+"<p>Wins:"+wins+"</p>"+
+"<p>Losses:"+Losses+"</p>"+
+"<p>Word:"+maskWord+"</p>"+
+"<p>Guessesleft:"+guessesLeft+"</p>"+
+"<p>Guesss so far:"+letterGuessed+"</p>";
+//"<button onclick="reset()">Reset</button>";
+document.querySelector("#game").innerHTML = html;
 
   };
 
@@ -274,6 +286,7 @@ else{
 }
 }
 if(guessesLeft === 0){
+  losersound.play();
 
     Losses++;
 
@@ -287,7 +300,7 @@ if(guessesLeft === 0){
       }
 
  if(maskWord===computerGuess){
-  document.getElementById
+  winnersound.play();
 	//console.log(maskWord);
 	wins++;
 	//console.log("Wins:"+wins);
@@ -296,8 +309,8 @@ if(guessesLeft === 0){
 }
 	
 var html=
-"<h1>Hangman Game</h1>"+
-"<p>Guess The Word</p>"+
+"<h1>The Zoo Hangman Game</h1>"+
+"<p>Guess The Zoo Animal</p>"+
 "<p>Wins:"+wins+"</p>"+
 "<p>Losses:"+Losses+"</p>"+
 "<p>Word:"+maskWord+"</p>"+
