@@ -13,52 +13,6 @@ console.log(maskWord);
 console.log(guessesLeft);
 console.log(letterGuessed);
 
-/*function draw() {
-        var canvas = document.getElementById('tutorial');
-        if (canvas.getContext) {
-          var ctx = canvas.getContext('2d');
-          
-          ctx.moveTo(175,350);
-			ctx.lineTo(0,350);
-			ctx.stroke();
-
-
-	          ctx.lineTo(0,0);
-	          ctx.stroke();
-
-          ctx.lineTo(175,0);
-          ctx.stroke();
-
-          ctx.lineTo(175,25);
-          ctx.stroke();
-
-          ctx.moveTo(175,55);
-          ctx.beginPath();
-          ctx.arc(175,55, 30,0, Math.PI * 2);
-          ctx.stroke();
-
-          ctx.moveTo(175,85);
-          ctx.lineTo(175,250);
-          ctx.stroke();
-
-          ctx.moveTo(175,110);
-          ctx.lineTo(105,140);
-          ctx.stroke();
-
-          ctx.moveTo(175,110);
-          ctx.lineTo(245,140);
-          ctx.stroke();
-
-          ctx.moveTo(175,250);
-          ctx.lineTo(105,280);
-          ctx.stroke();
-
-           ctx.moveTo(175,250);
-          ctx.lineTo(245,280);
-          ctx.stroke();
-
-        }
-    }*/
   var animate = function (guessesLeft) {
    if(guessesLeft===9){
    	frame1();
@@ -236,6 +190,7 @@ console.log(letterGuessed);
         maskWord=computerGuess.replace(/./g,'-');
         console.log(maskWord);
         redraw();
+       
         html=
 "<h1>The Zoo Hangman Game</h1>"+
 "<p>Guess The Zoo Animal</p>"+
@@ -266,7 +221,7 @@ if((maskWord !== computerGuess) && (guessesLeft !== 0)){
 			if(computerGuess.substr(i,1)==usrinput){
 				//console.log(computerGuess.substr(i,1));
 				maskWord=maskWord.substr(0,i)+usrinput+maskWord.substr(i+1,(maskWord.length)-i-1);
-				console.log(maskWord);
+				//console.log(maskWord);
 					
 
 		}
@@ -280,8 +235,8 @@ else{
 		letterGuessed.push(usrinput);
 		animate(guessesLeft);
 	}
-		console.log(guessesLeft);
-		console.log(letterGuessed);
+		//console.log(guessesLeft);
+		//console.log(letterGuessed);
 		
 }
 }
