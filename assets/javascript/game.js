@@ -7,11 +7,11 @@ var Losses=0;
 var guessesLeft=10;
 var letterGuessed= [];
 var computerGuess= words[Math.floor(Math.random() * words.length)].toLowerCase();
-console.log(computerGuess);
+//console.log(computerGuess);
 var maskWord=computerGuess.replace(/./g,'-');
-console.log(maskWord);
-console.log(guessesLeft);
-console.log(letterGuessed);
+//console.log(maskWord);
+//console.log(guessesLeft);
+//console.log(letterGuessed);
 
   var animate = function (guessesLeft) {
    if(guessesLeft===9){
@@ -186,9 +186,9 @@ console.log(letterGuessed);
         guessesLeft=10;
         letterGuessed=[];
         computerGuess= words[Math.floor(Math.random() * words.length)].toLowerCase();
-        console.log(computerGuess);
+        //console.log(computerGuess);
         maskWord=computerGuess.replace(/./g,'-');
-        console.log(maskWord);
+        //console.log(maskWord);
         redraw();
        
         html=
@@ -245,9 +245,9 @@ if(guessesLeft === 0){
 
     Losses++;
 
-      alert("Game Over.The Word Was " +computerGuess+ ". Press Ok To Guess the next word.");
+      alert("Game Over. Press Ok To Guess the next word.");
       
-              console.log("Losses:"+Losses);
+              //console.log("Losses:"+Losses);
               reset();
         
         //animate(guessesLeft);
